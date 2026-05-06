@@ -71,7 +71,7 @@
     <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#index.html">
       <img src="images/logo.PNG" 
            alt="We Clear Debt Logo" 
-           class="img-fluid me-2" 
+           class="img-fluid me-2 img-fluid rounded " 
            style="max-width: 60px;">
       We Clear Debt
     </a>
@@ -349,7 +349,7 @@ stability and peace of mind.
 
         <p class="fw-bold">⚠️ Limited spots available this month</p>
 
-        <form action="https://formspree.io/f/xkokgwkn" method="POST" class="row g-3 justify-content-center mt-3">
+      <form id="funnelForm" action="https://formspree.io/f/xkokgwkn" method="POST" class="row g-3 justify-content-center mt-3">
 
     <input type="hidden" name="source" value="Funnel Form - We Clear Debt">
 
@@ -365,7 +365,6 @@ stability and peace of mind.
         <input type="tel" name="phone" class="form-control" placeholder="Phone" required>
     </div>
 
-    <!-- ID NUMBER FIELD -->
     <div class="col-md-4">
         <input 
             type="text" 
@@ -378,8 +377,8 @@ stability and peace of mind.
     </div>
 
     <div class="col-md-4">
-        <select name="income" class="form-select">
-            <option>Income Range</option>
+        <select name="income" class="form-select" required>
+            <option value="">Income Range</option>
             <option>Under R10k</option>
             <option>R10k-R20k</option>
             <option>Over R20k</option>
@@ -387,11 +386,24 @@ stability and peace of mind.
     </div>
 
     <div class="col-md-4">
-        <input type="number" name="debt" class="form-control" placeholder="Debt Amount (R)">
+        <input type="number" name="debt" class="form-control" placeholder="Debt Amount (R)" required>
     </div>
 
+    <!-- CHECKBOX -->
+    <div class="col-12 text-start">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="funnelConsent" required>
+            <label class="form-check-label" for="funnelConsent">
+                I agree to the processing of my personal information as outlined in the <a href="privacy.html" class="link-dark">Terms and Conditions</a>
+            </label>
+        </div>
+    </div>
+
+    <!-- BUTTON -->
     <div class="col-12">
-        <button class="btn btn-light btn-lg">Submit</button>
+        <button type="submit" id="funnelSubmitBtn" class="btn btn-light btn-lg" disabled>
+            Submit
+        </button>
     </div>
 
 </form>
@@ -463,6 +475,16 @@ stability and peace of mind.
         });
     }
 </script>
+<script>
+const funnelForm = document.getElementById('funnelForm');
+const funnelBtn = document.getElementById('funnelSubmitBtn');
 
+function validateFunnelForm() {
+    funnelBtn.disabled = !funnelForm.checkValidity();
+}
+
+funnelForm.addEventListener('input', validateFunnelForm);
+funnelForm.addEventListener('change', validateFunnelForm);
+</script>
 </body>
 </html>
