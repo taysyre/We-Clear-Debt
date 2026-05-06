@@ -11,24 +11,55 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                 <a class="nav-link text-white" href="index.html"><h1 class="h4 mb-0"><img src="images/logo.PNG" alt="We Clear Debt Logo" 
-         class="img-fluid me-3" 
-         style="max-width: 100px;">We Clear Debt</h1></a>
-                <nav>
-                    <ul class="nav">
-                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="common-terms.html">Common Terms</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="about-us.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="faq.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+  <header class="site-header sticky-top bg-dark">
+  <nav class="navbar navbar-expand-lg container">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#home">
+      <img src="images/logo.PNG" 
+           alt="We Clear Debt Logo" 
+           class="img-fluid me-2" 
+           style="max-width: 60px;">
+      We Clear Debt
+    </a>
+
+    <!-- Toggle Button -->
+    <button class="navbar-toggler navbar-dark" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto text-center">
+
+        <li class="nav-item">
+          <a class="nav-link text-white py-2" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white py-2" href="common-terms.html">Common Terms</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white py-2" href="about-us.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white py-2" href="faq.html">FAQ</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white py-2" href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+    </div>
+
+  </nav>
+</header>
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
