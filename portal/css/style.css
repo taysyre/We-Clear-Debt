@@ -1,0 +1,141 @@
+:root {
+    --primary: #286faf;
+    --primary-dark: #1d5b90;
+    --background: #f5f7fb;
+    --sidebar: #111827;
+    --card: #ffffff;
+    --text: #222;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius: 14px;
+    --shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:260px;
+    background:var(--sidebar);
+    color:white;
+    padding:30px 20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.menu a{
+    padding:14px 18px;
+    border-radius:10px;
+    transition:.25s;
+}
+
+.menu a:hover,
+.menu a.active{
+    background:#286faf;
+}
+
+.main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.topbar{
+    height:70px;
+    background:white;
+    box-shadow:var(--shadow);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+}
+
+.content{
+    padding:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    color:var(--text-light);
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+.card h1{
+    color:var(--primary);
+}
+
+.table-card{
+    background:white;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:18px;
+    text-align:left;
+}
+
+thead{
+    background:#f8fafc;
+}
+
+tbody tr{
+    border-top:1px solid var(--border);
+}
+
+tbody tr:hover{
+    background:#f5f7fb;
+    cursor:pointer;
+}

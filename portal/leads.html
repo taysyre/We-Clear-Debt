@@ -1,15 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leads</title>
-</head>
-<body>
-    <h1>Leads</h1>
-    <p>This is the leads page.</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <title>We Clear Debt CRM | Leads</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            We Clear Debt
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="leads.html" class="active">Leads</a>
+
+            <a href="#">Clients</a>
+
+            <a href="#">Calendar</a>
+
+            <a href="#">Reports</a>
+
+            <a href="#">Settings</a>
+
+            <a href="#" id="logoutBtn">Logout</a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h2>Lead Management</h2>
+
+            <div id="userEmail"></div>
+
+        </div>
+
+        <div class="content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;gap:20px;flex-wrap:wrap;">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="🔍 Search clients..."
+                    style="padding:12px 18px;width:350px;border-radius:10px;border:1px solid #ddd;">
+
+                <button id="exportExcel" style="padding:12px 20px;background:#286faf;color:white;border:none;border-radius:10px;cursor:pointer;">
+                    Export CSV
+                </button>
+
+            </div>
+
+            <div class="table-card">
+
+                <table>
+
+                   <thead>
+
+<tr>
+
+    <th>Name</th>
+    <th>SA ID Number</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Debt</th>
+    <th>Status</th>
+    <th>Date</th>
+
+</tr>
+
+</thead>
+                    <tbody id="leadTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="js/supabase.js"></script>
+
+<script src="js/leads.js"></script>
+
 </body>
+
 </html>

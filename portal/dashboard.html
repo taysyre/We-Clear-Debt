@@ -1,49 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<h1>
+<div class="layout">
 
-Welcome to We Clear Debt CRM
+    <aside class="sidebar">
 
-</h1>
+        <div class="logo">
 
-<p>
+            We Clear Debt
 
-Login Successful 🎉
+        </div>
 
-</p>
+        <nav class="menu">
+
+            <a class="active" href="dashboard.html">Dashboard</a>
+
+            <a href="leads.html">Leads</a>
+
+            <a href="#">Clients</a>
+
+            <a href="#">Calendar</a>
+
+            <a href="#">Reports</a>
+
+            <a href="#">Settings</a>
+
+            <a href="#" id="logoutBtn">Logout</a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h2>Dashboard</h2>
+
+            <div id="userEmail"></div>
+
+        </div>
+
+        <div class="content">
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Total Leads</h3>
+
+                    <h1 id="totalLeads">0</h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>New Leads</h3>
+
+                    <h1 id="newLeads">0</h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Completed</h3>
+
+                    <h1>0</h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Outstanding Docs</h3>
+
+                    <h1>0</h1>
+
+                </div>
+
+            </div>
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+
+                            <th>Phone</th>
+
+                            <th>Email</th>
+
+                            <th>Status</th>
+
+                            
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="recentLeads">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script src="js/supabase.js"></script>
-
-<script>
-
-async function checkSession(){
-
-const { data } =
-await supabaseClient.auth.getSession();
-
-if(!data.session){
-
-window.location.href =
-"login.html";
-
-}
-
-}
-
-checkSession();
-
-</script>
+<script src="js/dashboard.js"></script>
 
 </body>
 
