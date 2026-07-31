@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Client Details</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<div class="logo">
+
+We Clear Debt CRM
+
+</div>
+
+<nav class="menu">
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="leads.html">Leads</a>
+
+<a href="clients.html" class="active">Clients</a>
+
+<a href="#" id="logoutBtn">Logout</a>
+
+</nav>
+
+</aside>
+
+<main class="main">
+
+<div class="topbar">
+
+<h2>Client Details</h2>
+
+<div id="userEmail"></div>
+
+</div>
+
+<div class="content">
+
+<div class="table-card">
+
+<h2 id="clientName">Loading...</h2>
+
+<div class="details-grid">
+
+<div>
+
+<label>Phone</label>
+
+<input type="text" id="phone">
+
+</div>
+
+<div>
+
+<label>Email</label>
+
+<input type="email" id="email">
+
+</div>
+
+<div>
+
+<label>ID Number</label>
+
+<input type="text" id="idNumber">
+
+</div>
+
+<div>
+
+<label>Income</label>
+
+<input type="text" id="income">
+
+</div>
+
+<div>
+
+<label>Debt Amount</label>
+
+<input type="number" id="debt">
+
+</div>
+
+<div>
+
+<label>Status</label>
+
+<select id="status">
+
+<option>New Lead</option>
+
+<option>Contacted</option>
+
+<option>Documents Requested</option>
+
+<option>Assessment</option>
+
+<option>Debt Review</option>
+
+<option>Completed</option>
+
+<option>On Hold</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div style="margin-top:30px;">
+
+<label>Internal Notes</label>
+
+<textarea id="notes" rows="6"></textarea>
+
+</div>
+
+<div style="margin-top:25px;display:flex;gap:15px;">
+
+<button id="saveBtn" class="btn-primary">
+
+Save Changes
+
+</button>
+
+<a id="callBtn" class="btn-primary">
+
+Call Client
+
+</a>
+
+<a id="emailBtn" class="btn-primary">
+
+Email Client
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="js/client-details.js"></script>
+
+</body>
+
+</html>

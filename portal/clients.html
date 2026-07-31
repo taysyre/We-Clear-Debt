@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>We Clear Debt CRM | Clients</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            We Clear Debt CRM
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="leads.html">Leads</a>
+            <a href="clients.html" class="active">Clients</a>
+            <a href="#">Calendar</a>
+            <a href="#">Reports</a>
+            <a href="settings.html">Settings</a>
+
+            <a href="#" id="logoutBtn">Logout</a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h2>Clients</h2>
+
+            <div id="userEmail"></div>
+
+        </div>
+
+        <div class="content">
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Clients</h3>
+                    <h1 id="totalClients">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Active</h3>
+                    <h1 id="activeClients">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Completed</h3>
+                    <h1 id="completedClients">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>On Hold</h3>
+                    <h1 id="holdClients">0</h1>
+                </div>
+
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+
+                <input
+                    id="search"
+                    type="text"
+                    placeholder="Search client..."
+                    class="search-box">
+
+            </div>
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+                        <th>ID Number</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Debt</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="clientTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="js/clients.js"></script>
+
+</body>
+
+</html>

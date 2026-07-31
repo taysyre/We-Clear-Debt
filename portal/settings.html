@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | We Clear Debt CRM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            We Clear Debt CRM
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="leads.html">Leads</a>
+            <a href="clients.html">Clients</a>
+            <a href="#">Calendar</a>
+            <a href="#">Reports</a>
+            <a href="settings.html" class="active">Settings</a>
+
+            <a href="#" id="logoutBtn">Logout</a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h2>Settings</h2>
+
+            <div id="userEmail"></div>
+
+        </div>
+
+        <div class="content">
+
+            <div class="settings-grid">
+
+                <div class="setting-card">
+
+                    <h3>Administrator</h3>
+
+                    <label>Email</label>
+
+                    <input type="email" id="adminEmail" disabled>
+
+                </div>
+
+                <div class="setting-card">
+
+                    <h3>Company Details</h3>
+
+                    <label>Company Name</label>
+
+                    <input type="text" id="companyName" value="We Clear Debt">
+
+                    <label>Phone</label>
+
+                    <input type="text" id="companyPhone" value="+27 60 257 2591">
+
+                    <label>Email</label>
+
+                    <input type="email" id="companyEmail" value="info@wecleardebt.co.za">
+
+                </div>
+
+                <div class="setting-card">
+
+                    <h3>Change Password</h3>
+
+                    <label>New Password</label>
+
+                    <input type="password" id="newPassword">
+
+                    <button id="passwordBtn" class="btn-primary">
+                        Update Password
+                    </button>
+
+                </div>
+
+                <div class="setting-card">
+
+                    <h3>Preferences</h3>
+
+                    <label>
+
+                        <input type="checkbox" id="darkMode">
+
+                        Enable Dark Mode
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>
