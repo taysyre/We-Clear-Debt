@@ -8,7 +8,7 @@ A modern, mobile-first website for We Clear Debt, a South African debt assistanc
 - **How It Works (how-it-works.html)**: Detailed step-by-step breakdown.
 - **About Us (about-us.html)**: Company information and mission.
 - **FAQ (faq.html)**: Common questions and answers.
-- **Contact (contact.html)**: Contact form and details.
+- **Contact (contact.html)**: Contact form, details, and a private service feedback form.
 
 ## Features
 
@@ -16,7 +16,8 @@ A modern, mobile-first website for We Clear Debt, a South African debt assistanc
 - Sticky call-to-action buttons for phone and WhatsApp.
 - SEO optimized with meta tags and keywords.
 - Trustworthy design with testimonials and benefits.
-- Lead capture forms (currently alerts; integrate with backend for real submissions).
+- Contact enquiries are stored in the Supabase CRM and sent through the configured Formspree endpoint.
+- Private service feedback submissions are sent through the configured Formspree endpoint; the team can reply using the email provided.
 
 ## Technologies
 

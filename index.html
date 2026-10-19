@@ -32,13 +32,6 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {font-family: 'Poppins', sans-serif; background:#f8f9fa;}
-        header {
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}      
         .hero {background: linear-gradient(135deg,#0d6efd,#0b5ed7); border-radius:0 0 40px 40px;}
         .btn {border-radius:30px; padding:10px 25px;}
         .card-custom {border:none;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:0.3s;}
@@ -48,12 +41,11 @@
         .testimonial {background:white;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}        
         .form-control,.form-select {border-radius:12px;padding:12px;}
         footer {border-radius:30px 30px 0 0;}        
-        .sticky-cta {position:fixed;bottom:20px;right:20px;z-index:999;}
         .trust-badges {font-size:14px;margin-top:15px;opacity:0.9;}
         #backToTopBtn {
     position: fixed;
-    bottom: 90px; /* sits above WhatsApp button */
-    right: 20px;
+    bottom: 20px;
+    left: 20px;
     z-index: 999;
     border: none;
     background-color: #0d6efd;
@@ -99,11 +91,11 @@ src="https://www.facebook.com/tr?id=1344235680485454&ev=PageView&noscript=1"
 <body>
 
 <!-- Header -->
-<header class="site-header sticky-top bg-dark">
-  <nav class="navbar navbar-expand-lg container">
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg container" aria-label="Main navigation">
 
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#index.html">
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="index.html">
       <img src="images/logo.PNG" 
            alt="We Clear Debt Logo" 
            class="img-fluid me-2 img-fluid rounded " 
@@ -112,10 +104,13 @@ src="https://www.facebook.com/tr?id=1344235680485454&ev=PageView&noscript=1"
     </a>
 
     <!-- Toggle Button -->
-    <button class="navbar-toggler navbar-dark" 
+    <button class="navbar-toggler navbar-dark"
             type="button" 
             data-bs-toggle="collapse" 
-            data-bs-target="#mainNavbar">
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -606,8 +601,10 @@ stability and peace of mind.
 
 <!-- Sticky CTA -->
 <div class="sticky-cta">
-    
-    <a href="https://wa.me/27768247432?text=Hi%20I%20need%20help%20with%20debt" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/27768247432?text=Hi%20I%20need%20help%20with%20debt" class="btn" aria-label="Chat with We Clear Debt on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="sticky-cta-label"><span>WhatsApp</span><small>Chat with our team</small></span>
+    </a>
 </div>
 
 <button onclick="scrollToTop()" id="backToTopBtn">
@@ -651,5 +648,6 @@ function validateFunnelForm() {
 funnelForm.addEventListener('input', validateFunnelForm);
 funnelForm.addEventListener('change', validateFunnelForm);
 </script>
+<script src="js/script.js"></script>
 </body>
 </html>

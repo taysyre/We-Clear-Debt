@@ -41,7 +41,47 @@ text-align:center;
 
 width:180px;
 
+height:180px;
+
 margin-bottom:30px;
+
+padding:12px;
+
+border:1px solid #e5edf5;
+
+border-radius:28px;
+
+background:linear-gradient(145deg,#fff,#f4f8fc);
+
+box-shadow:0 16px 36px rgba(16,44,78,.14);
+
+transition:transform .3s ease,box-shadow .3s ease;
+
+object-fit:contain;
+
+}
+
+.logo:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 20px 42px rgba(16,44,78,.2);
+
+}
+
+@media (prefers-reduced-motion: reduce){
+
+.logo{
+
+transition:none;
+
+}
+
+.logo:hover{
+
+transform:none;
+
+}
 
 }
 
