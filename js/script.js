@@ -21,7 +21,7 @@
 		});
 	}
 
-	const whatsappUrl = 'https://wa.me/27768247432?text=Hi%20I%20need%20help%20with%20debt';
+	const whatsappUrl = 'https://wa.me/27634098777?text=Hi%20I%20need%20help%20with%20debt';
 	const intents = [
 		{
 			keywords: ['what is debt review', 'debt review', 'debt counselling', 'debt counseling', 'over indebted', 'overindebted'],

@@ -1,5 +1,72 @@
 /* Custom Styles for We Clear Debt */
 
+.homepage-feedback-callout {
+    background: #f4f8f6;
+}
+
+.homepage-feedback-link {
+    padding: 22px 28px;
+    border: 1px solid #e1e9e5;
+    border-radius: 18px;
+    background: #fff;
+    color: #123f35;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(18, 63, 53, .07);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.homepage-feedback-link:hover,
+.homepage-feedback-link:focus-visible {
+    color: #123f35;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(18, 63, 53, .12);
+}
+
+.homepage-feedback-link:focus-visible {
+    outline: 3px solid #167c66;
+    outline-offset: 3px;
+}
+
+.homepage-feedback-icon {
+    display: grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e8f3ef;
+    color: #167c66;
+    font-size: 1.2rem;
+}
+
+.homepage-feedback-copy {
+    display: grid;
+    flex: 1;
+    gap: 3px;
+}
+
+.homepage-feedback-eyebrow {
+    color: #167c66;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.homepage-feedback-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.homepage-feedback-description {
+    color: #53635d;
+}
+
+.homepage-feedback-action {
+    color: #167c66;
+    font-weight: 700;
+}
+
 .service-feedback-section {
     background: #f4f8f6;
 }
