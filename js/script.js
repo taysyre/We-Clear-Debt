@@ -21,6 +21,7 @@
 		});
 	}
 
+	const whatsappNumber = '+27 63 409 8777';
 	const whatsappUrl = 'https://wa.me/27634098777?text=Hi%20I%20need%20help%20with%20debt';
 	const intents = [
 		{
@@ -122,7 +123,7 @@
 		},
 		{
 			keywords: ['contact', 'phone', 'whatsapp', 'address', 'speak to', 'human', 'agent', 'person'],
-			answer: 'You can call We Clear Debt on +27 60 257 2591, visit the Contact page, or message the team on WhatsApp. Please do not share your ID number, bank details, passwords, or account numbers in this chat.'
+			answer: `You can call We Clear Debt on +27 60 257 2591, visit the Contact page, or message the team on WhatsApp at ${whatsappNumber}. Please do not share your ID number, bank details, passwords, or account numbers in this chat.`
 		},
 		{
 			keywords: ['ncr', 'registered', 'registration'],
@@ -323,8 +324,8 @@
 			af: ['kontak', 'telefoon', 'whatsapp', 'praat met iemand', 'menslike agent'],
 			xh: ['qhagamshelana', 'umnxeba', 'inombolo yefowuni', 'thetha nomntu', 'iwhatsapp'],
 			answer: {
-				af: 'Jy kan We Clear Debt skakel by +27 60 257 2591, die Kontak-blad besoek of die span op WhatsApp kontak. Moet asseblief nie jou ID-nommer, bankbesonderhede, wagwoorde of rekeningnommers in hierdie klets deel nie.',
-				xh: 'Ungatsalela umnxeba ku-We Clear Debt ku +27 60 257 2591, undwendwele iphepha loQhagamshelwano okanye uthumele umyalezo kwiqela kuWhatsApp. Nceda ungabelani ngenombolo yesazisi, iinkcukacha zebhanki, amagama ayimfihlo okanye iinombolo zeakhawunti kule ncoko.'
+				af: `Jy kan We Clear Debt skakel by +27 60 257 2591, die Kontak-blad besoek of die span op WhatsApp kontak by ${whatsappNumber}. Moet asseblief nie jou ID-nommer, bankbesonderhede, wagwoorde of rekeningnommers in hierdie klets deel nie.`,
+				xh: `Ungatsalela umnxeba ku-We Clear Debt ku +27 60 257 2591, undwendwele iphepha loQhagamshelwano okanye uthumele umyalezo kwiqela kuWhatsApp ku ${whatsappNumber}. Nceda ungabelani ngenombolo yesazisi, iinkcukacha zebhanki, amagama ayimfihlo okanye iinombolo zeakhawunti kule ncoko.`
 			}
 		},
 		{
@@ -399,7 +400,23 @@
 	function addMessage(text, sender) {
 		const message = document.createElement('p');
 		message.className = `debt-chat-message debt-chat-message-${sender}`;
-		message.textContent = text;
+		if (sender === 'assistant') {
+			text.split(/(https:\/\/wa\.me\/27634098777\?text=Hi%20I%20need%20help%20with%20debt|\+27 63 409 8777)/g).forEach((part) => {
+				if (part === whatsappUrl || part === whatsappNumber) {
+					const link = document.createElement('a');
+					link.href = whatsappUrl;
+					link.target = '_blank';
+					link.rel = 'noopener noreferrer';
+					link.textContent = part;
+					link.setAttribute('aria-label', 'Chat with We Clear Debt on WhatsApp');
+					message.appendChild(link);
+				} else {
+					message.appendChild(document.createTextNode(part));
+				}
+			});
+		} else {
+			message.textContent = text;
+		}
 		messages.appendChild(message);
 		messages.scrollTop = messages.scrollHeight;
 	}
