@@ -98,79 +98,142 @@ src="https://www.facebook.com/tr?id=1344235680485454&ev=PageView&noscript=1"
   </nav>
 </header>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h1 class="text-center mb-5">Contact Us</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="images/logo.PNG" alt="We Clear Debt Logo" 
-         class="img-fluid me-3 brand-logo-art" 
-         style="max-width: 230px;">
-                    <h3>Get In Touch</h3>
-                    <p>Ready to take control of your finances? Contact us today.</p>
-                    <p><strong>Phone:</strong> +27 60 257 2591</p>
-                    <p><strong>Address:</strong> 20 Broad Road, Wynberg, 7784</p>
-                    <a href="https://wa.me/27634098777?text=Hi%20I%20need%20help%20with%20debt" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    <section class="contact-intro py-5">
+            <div class="container">
+                <div class="contact-heading text-center mx-auto">
+                    <span class="contact-eyebrow">Here when you need us</span>
+                    <h1 class="display-5 fw-bold mt-2 mb-3">Let’s talk about a way forward</h1>
+                    <p class="lead mb-0">Tell us a little about your situation, or reach out directly. Our team is ready to help you understand your options.</p>
                 </div>
-       <div class="col-md-6">
-<form id="leadForm" action="https://formspree.io/f/xkokgwkn" method="POST">
+            </div>
+    </section>
 
-    <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" name="name" class="form-control" required>
-    </div>
+    <section id="contact" class="contact-main pb-5">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-5">
+                        <aside class="contact-info-panel h-100">
+                            <span class="contact-panel-eyebrow">Get in touch</span>
+                            <h2 class="h3 fw-bold mt-2 mb-3">Choose how you’d like to connect</h2>
+                            <p class="contact-info-lead">A conversation is a good place to start. Contact us using the option that works best for you.</p>
 
-    <div class="mb-3">
-        <label class="form-label">Phone</label>
-        <input type="tel" name="phone" class="form-control" required>
-    </div>
+                            <a class="contact-detail" href="tel:+27602572591">
+                                <span class="contact-detail-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></span>
+                                <span><small>Call our team</small><strong>+27 60 257 2591</strong></span>
+                                <i class="fas fa-arrow-up-right-from-square contact-detail-arrow" aria-hidden="true"></i>
+                            </a>
 
-    <div class="mb-3">
-        <label class="form-label">ID Number</label>
-        <input 
-            type="text" 
-            name="id_number" 
-            class="form-control" 
-            placeholder="Enter your 13-digit ID number"
-            pattern="[0-9]{13}" 
-            maxlength="13"
-            required>
-    </div>
+                            <a class="contact-detail" href="https://wa.me/27634098777?text=Hi%20I%20need%20help%20with%20debt" target="_blank" rel="noopener noreferrer">
+                                <span class="contact-detail-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+                                <span><small>Message us on WhatsApp</small><strong>Chat with our team</strong></span>
+                                <i class="fas fa-arrow-up-right-from-square contact-detail-arrow" aria-hidden="true"></i>
+                            </a>
 
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-control" required>
-    </div>
+                            <div class="contact-detail contact-address">
+                                <span class="contact-detail-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                                <span><small>Our address</small><strong>20 Broad Road<br>Wynberg, 7784</strong></span>
+                            </div>
 
-    <div class="mb-3">
-        <label class="form-label">Income Range</label>
-        <select name="income" class="form-select" required>
-            <option value="">Select option</option>
-            <option>Under R10k</option>
-            <option>R10k-R20k</option>
-            <option>Over R20k</option>
-        </select>
-    </div>
+                            <div class="contact-note">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                                <p class="mb-0"><strong>Your information matters.</strong> Please review our <a href="privacy.html">privacy and consent information</a> before submitting the form.</p>
+                            </div>
+                        </aside>
+                    </div>
 
-    <div class="mb-3">
-        <label class="form-label">Debt Amount (R)</label>
-        <input type="number" name="debt" class="form-control" required>
-    </div>
+                    <div class="col-lg-7">
+                        <div class="contact-form-panel h-100">
+                            <div class="contact-form-heading">
+                                <span class="contact-eyebrow">Request a conversation</span>
+                                <h2 class="h3 fw-bold mt-2 mb-2">Share a few details</h2>
+                                <p class="text-muted mb-0">Complete the form and let us know how to reach you.</p>
+                            </div>
 
-    <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="consentCheck" required>
-        <label class="form-check-label" for="consentCheck">
-            I agree to the processing of my personal information as outlined in the <a href="privacy.html">Terms and Conditions</a>.
-        </label>
-    </div>
+                            <form id="leadForm" action="https://formspree.io/f/xkokgwkn" method="POST">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contactName">Full Name</label>
+                                        <input id="contactName" type="text" name="name" class="form-control" autocomplete="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contactPhone">Phone</label>
+                                        <input id="contactPhone" type="tel" name="phone" class="form-control" autocomplete="tel" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contactIdNumber">ID Number</label>
+                                        <input id="contactIdNumber" type="text" name="id_number" class="form-control" placeholder="Enter your 13-digit ID number" pattern="[0-9]{13}" maxlength="13" inputmode="numeric" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contactEmail">Email</label>
+                                        <input id="contactEmail" type="email" name="email" class="form-control" autocomplete="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contactIncome">Income Range</label>
+                                        <select id="contactIncome" name="income" class="form-select" required>
+                                            <option value="">Select option</option>
+                                            <option>Under R10k</option>
+                                            <option>R10k-R20k</option>
+                                            <option>Over R20k</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contactDebt">Debt Amount (R)</label>
+                                        <input id="contactDebt" type="number" name="debt" class="form-control" min="0" inputmode="numeric" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check contact-consent">
+                                            <input class="form-check-input" type="checkbox" id="consentCheck" required>
+                                            <label class="form-check-label" for="consentCheck">
+                                                I agree to the processing of my personal information as outlined in the <a href="privacy.html">Terms and Conditions</a>.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" id="submitBtn" class="btn btn-primary contact-submit" disabled>
+                                            Send my details <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+                                        </button>
+                                        <small class="contact-form-footnote"><i class="fas fa-shield-alt me-1" aria-hidden="true"></i> Your details are used to respond to your enquiry.</small>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-    <button type="submit" id="submitBtn" class="btn btn-primary" disabled>
-        Submit
-    </button>
-
-</form>
-</div>
+                <div class="contact-next-steps mt-5">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-4">
+                            <span class="contact-eyebrow">What to expect</span>
+                            <h2 class="h3 fw-bold mt-2 mb-2">A simple place to start</h2>
+                            <p class="text-muted mb-0">You don’t need to have everything figured out before reaching out.</p>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="contact-step">
+                                        <span>01</span>
+                                        <h3>Tell us</h3>
+                                        <p class="mb-0">Share your contact details and a little about your situation.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="contact-step">
+                                        <span>02</span>
+                                        <h3>We listen</h3>
+                                        <p class="mb-0">Our team can learn more about what you need help with.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="contact-step">
+                                        <span>03</span>
+                                        <h3>Explore options</h3>
+                                        <p class="mb-0">We’ll help you understand possible next steps.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
