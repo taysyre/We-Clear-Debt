@@ -26,41 +26,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Page Styling -->
-    <style>
-        body {
-            background: #f5f7fa;
-        }
-
-        .hero-terms {
-            background: linear-gradient(135deg, #0d6efd,#0b5ed7);
-            color: white;
-            padding: 60px 0;
-        }
-
-        .term-card {
-            background: #f8fafc;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #3aa0c7;
-            transition: 0.3s;
-        }
-
-        .term-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .term-title {
-            color: #3aa0c7;
-            font-weight: 600;
-        }
-
-        .container-narrow {
-            max-width: 900px;
-        }
-    </style>
-
     <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -80,7 +45,7 @@ src="https://www.facebook.com/tr?id=1344235680485454&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 
-<body>
+<body class="terms-page">
 
 <!-- Header -->
 <header class="site-header">
@@ -149,14 +114,21 @@ src="https://www.facebook.com/tr?id=1344235680485454&ev=PageView&noscript=1"
 <section id="common-terms" class="py-5">
     <div class="container container-narrow">
 
-        <p class="text-muted mb-4">
-            Navigating the world of debt review can be confusing. Here's a comprehensive guide to help 
-            you understand the key terms you'll encounter on your journey to financial freedom.
-        </p>
+        <div class="terms-image-card">
+            <div class="terms-image-layout">
+                <img src="images/marketing-04.jpg" alt="Getting clear guidance about debt review" class="marketing-photo" loading="lazy">
+                <div class="terms-image-copy">
+                    <span class="page-eyebrow">Your guide to debt review</span>
+                    <h2 class="h2 fw-bold mt-2 mb-3">Understand the terms</h2>
+                    <p class="terms-image-caption">
+                        Navigating the world of debt review can be confusing. Here's a comprehensive guide to help
+                        you understand the key terms you'll encounter on your journey to financial freedom.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-        <img src="images/marketing-04.jpg" alt="Getting clear guidance about debt review" class="marketing-photo marketing-photo-compact mb-4" loading="lazy">
-
-        <!-- TERMS -->
+        <div class="terms-grid">
 
         <div class="term-card">
             <div class="term-title">Debt Review</div>
@@ -226,6 +198,8 @@ src="https://www.facebook.com/tr?id=1344235680485454&ev=PageView&noscript=1"
         <div class="term-card">
             <div class="term-title">Section 129 Letter</div>
             <p>A notice sent before legal action informing you of your rights.</p>
+        </div>
+
         </div>
 
     </div>
