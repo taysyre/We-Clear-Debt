@@ -4,11 +4,13 @@ A modern, mobile-first website for We Clear Debt, a South African debt assistanc
 
 ## Pages
 
-- **Home (index.html)**: Hero section, problem/solution, benefits, testimonials, 3-step process, contact form.
-- **How It Works (how-it-works.html)**: Detailed step-by-step breakdown.
-- **About Us (about-us.html)**: Company information and mission.
-- **FAQ (faq.html)**: Common questions and answers.
-- **Contact (contact.html)**: Contact form, details, and a private service feedback form.
+- **Home (`/`)**: Hero section, problem/solution, benefits, testimonials, 3-step process, contact form.
+- **About Us (`/about-us/`)**: Company information and mission.
+- **Debt Review (`/debt-review/`)**: How debt review works.
+- **Common Terms (`/common-terms/`)**: Definitions of common debt review terms.
+- **FAQ (`/faq/`)**: Common questions and answers.
+- **Contact (`/contact/`)**: Contact form, details, and a private service feedback form.
+- **Privacy and terms (`/privacy/`)**: Website legal policies and consent information.
 
 ## Features
 

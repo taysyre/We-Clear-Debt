@@ -2663,3 +2663,177 @@ a.contact-detail:focus-visible {
         display: none;
     }
 }
+
+.home-page .hero-text > * {
+    animation: hero-content-enter .72s both cubic-bezier(.2, .8, .2, 1);
+}
+
+.home-page .hero-text > :nth-child(2) { animation-delay: .08s; }
+.home-page .hero-text > :nth-child(3) { animation-delay: .16s; }
+.home-page .hero-text > :nth-child(4) { animation-delay: .24s; }
+.home-page .hero-text > :nth-child(5) { animation-delay: .32s; }
+
+.home-page .hero-image-side {
+    animation: hero-image-enter 1s .12s both cubic-bezier(.2, .8, .2, 1);
+}
+
+.home-page .hero-shape {
+    animation: hero-shape-drift 12s ease-in-out infinite alternate;
+}
+
+.home-page .shape-2 {
+    animation-delay: -5s;
+    animation-direction: alternate-reverse;
+}
+
+.home-page .shape-3 {
+    animation-delay: -8s;
+}
+
+.about-page .about-intro,
+.terms-page .hero-terms > .container,
+.faq-page .faq-intro,
+.contact-intro,
+.explainer-page .debt-hero > .container {
+    animation: page-intro-enter .7s both cubic-bezier(.2, .8, .2, 1);
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity .65s ease var(--scroll-reveal-delay, 0ms),
+        transform .65s cubic-bezier(.2, .8, .2, 1) var(--scroll-reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+.trust-tile,
+.testimonial-card,
+.about-story,
+.about-value-card,
+.terms-image-card,
+.term-card,
+.faq-help-card,
+.service-feedback-card,
+.contact-intro,
+.legal-content,
+.explainer-page .video-box {
+    transition: transform .28s cubic-bezier(.2, .8, .2, 1), box-shadow .28s ease;
+}
+
+.trust-tile:hover,
+.testimonial-card:hover,
+.about-value-card:hover,
+.term-card:hover,
+.faq-help-card:hover,
+.service-feedback-card:hover,
+.explainer-page .video-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(18, 43, 37, .13);
+}
+
+.home-page .marketing-photo,
+.about-page .marketing-photo,
+.faq-page .marketing-photo,
+.terms-page .terms-image-card .marketing-photo {
+    transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s ease;
+}
+
+.home-page .marketing-photo:hover,
+.about-page .marketing-photo:hover,
+.faq-page .marketing-photo:hover,
+.terms-page .terms-image-card .marketing-photo:hover {
+    transform: scale(1.025);
+    box-shadow: 0 22px 48px rgba(18, 43, 37, .2);
+}
+
+@keyframes hero-content-enter {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-image-enter {
+    from { opacity: 0; transform: translateX(24px) scale(1.02); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes hero-shape-drift {
+    from { transform: translate3d(-8px, -6px, 0) scale(.96); }
+    to { transform: translate3d(12px, 10px, 0) scale(1.04); }
+}
+
+@keyframes page-intro-enter {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767.98px) {
+    .home-page .hero::before {
+        animation: hero-mobile-image-enter 1.2s both ease-out;
+    }
+
+    .home-page .hero-image-side {
+        animation: none;
+    }
+}
+
+@keyframes hero-mobile-image-enter {
+    from { opacity: 0; transform: scale(1.04); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page .hero-text > *,
+    .home-page .hero-image-side,
+    .home-page .hero-shape,
+    .home-page .hero::before,
+    .about-page .about-intro,
+    .terms-page .hero-terms > .container,
+    .faq-page .faq-intro,
+    .contact-intro,
+    .explainer-page .debt-hero > .container {
+        animation: none;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .trust-tile,
+    .testimonial-card,
+    .about-story,
+    .about-value-card,
+    .terms-image-card,
+    .term-card,
+    .faq-help-card,
+    .service-feedback-card,
+    .contact-intro,
+    .legal-content,
+    .explainer-page .video-box,
+    .home-page .marketing-photo,
+    .about-page .marketing-photo,
+    .faq-page .marketing-photo,
+    .terms-page .terms-image-card .marketing-photo {
+        transition: none;
+    }
+
+    .trust-tile:hover,
+    .testimonial-card:hover,
+    .about-value-card:hover,
+    .term-card:hover,
+    .faq-help-card:hover,
+    .service-feedback-card:hover,
+    .explainer-page .video-box:hover,
+    .home-page .marketing-photo:hover,
+    .about-page .marketing-photo:hover,
+    .faq-page .marketing-photo:hover,
+    .terms-page .terms-image-card .marketing-photo:hover {
+        transform: none;
+    }
+}

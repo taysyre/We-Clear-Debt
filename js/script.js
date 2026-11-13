@@ -3,12 +3,12 @@
 (() => {
 	const navbar = document.querySelector('#mainNavbar');
 	if (navbar) {
-		const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
-		const currentPage = currentPath.split('/').pop() || 'index.html';
+		const normalizePath = (path) => path.replace(/\/+$/, '') || '/';
+		const currentPath = normalizePath(window.location.pathname);
 
 		navbar.querySelectorAll('a[href]').forEach((link) => {
-			const linkUrl = new URL(link.href, window.location.href);
-			if (linkUrl.pathname === currentPath || (currentPage === 'index.html' && linkUrl.pathname.endsWith('/index.html'))) {
+			const linkPath = normalizePath(new URL(link.href, window.location.href).pathname);
+			if (linkPath === currentPath) {
 				link.classList.add('is-current');
 				link.setAttribute('aria-current', 'page');
 			}
@@ -18,6 +18,49 @@
 					window.bootstrap.Collapse.getOrCreateInstance(navbar).hide();
 				}
 			});
+		});
+	}
+
+	const revealTargets = document.querySelectorAll([
+		'.trust-tile',
+		'.homepage-feedback-link',
+		'.process-card',
+		'.benefit-card',
+		'.testimonial-card',
+		'.about-story',
+		'.about-value-card',
+		'.about-cta',
+		'.terms-image-card',
+		'.term-card',
+		'.faq-page #faq .accordion-item',
+		'.faq-help-card',
+		'.service-feedback-card',
+		'.legal-content',
+		'.explainer-page .video-box',
+		'.explainer-page .info-card'
+	].join(','));
+
+	if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		const revealObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-revealed');
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+
+		revealTargets.forEach((element) => {
+			if (element.closest('[data-aos]')) {
+				return;
+			}
+
+			const group = element.closest('.row, .terms-grid, .accordion');
+			const groupItem = group && Array.from(group.children).find((child) => child.contains(element));
+			const groupIndex = groupItem ? Array.from(group.children).indexOf(groupItem) : 0;
+			element.style.setProperty('--scroll-reveal-delay', `${(groupIndex % 3) * 90}ms`);
+			element.classList.add('scroll-reveal');
+			revealObserver.observe(element);
 		});
 	}
 
