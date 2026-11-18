@@ -39,29 +39,37 @@
 		'.explainer-page .video-box',
 		'.explainer-page .info-card'
 	].join(','));
+	const aosTargets = document.querySelectorAll('[data-aos]');
 
 	if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		document.documentElement.classList.add('motion-ready');
 		const revealObserver = new IntersectionObserver((entries, observer) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					entry.target.classList.add('is-revealed');
+					entry.target.classList.add(entry.target.hasAttribute('data-aos') ? 'aos-visible' : 'is-revealed');
 					observer.unobserve(entry.target);
 				}
 			});
 		}, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-		revealTargets.forEach((element) => {
-			if (element.closest('[data-aos]')) {
-				return;
-			}
-
+		const observeForReveal = (element, useAosDelay = false) => {
 			const group = element.closest('.row, .terms-grid, .accordion');
 			const groupItem = group && Array.from(group.children).find((child) => child.contains(element));
 			const groupIndex = groupItem ? Array.from(group.children).indexOf(groupItem) : 0;
-			element.style.setProperty('--scroll-reveal-delay', `${(groupIndex % 3) * 90}ms`);
-			element.classList.add('scroll-reveal');
+			const delay = useAosDelay ? Number.parseInt(element.dataset.aosDelay || '0', 10) : (groupIndex % 3) * 60;
+			element.style.setProperty('--scroll-reveal-delay', `${Number.isFinite(delay) ? delay : 0}ms`);
+			if (!useAosDelay) {
+				element.classList.add('scroll-reveal');
+			}
 			revealObserver.observe(element);
+		};
+
+		revealTargets.forEach((element) => {
+			if (!element.closest('[data-aos]')) {
+				observeForReveal(element);
+			}
 		});
+		aosTargets.forEach((element) => observeForReveal(element, true));
 	}
 
 	const whatsappNumber = '+27 63 409 8777';
