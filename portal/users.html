@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users | We Clear Debt CRM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">We Clear Debt CRM</div>
+        <nav class="menu" aria-label="Portal navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="leads.html">Leads</a>
+            <a href="clients.html">Clients</a>
+            <a href="#">Calendar</a>
+            <a href="reports.html">Reports</a>
+            <a href="users.html" class="active" aria-current="page">Users</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <h2>User Administration</h2>
+            <div id="userEmail"></div>
+        </header>
+
+        <div class="content users-content">
+            <nav class="users-subnav" aria-label="User administration views">
+                <button type="button" class="users-subnav-active" data-user-nav="users">Show Users</button>
+                <button type="button" data-user-nav="add">Add A New User</button>
+                <button type="button" data-user-nav="copy">Copy User</button>
+                <button type="button" data-user-nav="search">Search For A User</button>
+                <button type="button" data-user-nav="stats">User Stats</button>
+                <button type="button" data-user-nav="status">User Status</button>
+                <button type="button" data-user-nav="time-sheet">Time Sheet</button>
+            </nav>
+
+            <p id="userMessage" class="users-message" role="status" aria-live="polite"></p>
+
+            <section id="userListPanel" class="users-panel" aria-labelledby="userListTitle">
+                <div class="users-panel-heading">
+                    <div>
+                        <h1 id="userListTitle">User Listings</h1>
+                        <p id="userListDescription">Manage portal accounts and access.</p>
+                    </div>
+                    <span id="usersCount" class="users-count">0 users</span>
+                </div>
+
+                <div class="users-toolbar">
+                    <label class="users-search">
+                        Search users
+                        <input type="search" id="userSearch" placeholder="Name, email, group, or user ID">
+                    </label>
+                    <label>
+                        Account status
+                        <select id="userStatusFilter">
+                            <option value="all">All users</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </label>
+                    <button type="button" class="btn-secondary" id="showAllUsers">Show All Users</button>
+                    <button type="button" class="btn-secondary" id="refreshUsers">Refresh</button>
+                </div>
+
+                <div class="table-card users-table-card">
+                    <table id="usersTable">
+                        <thead id="usersTableHead"></thead>
+                        <tbody id="usersTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="userFormPanel" class="users-panel" aria-labelledby="userFormTitle" hidden>
+                <div class="users-panel-heading">
+                    <div>
+                        <h1 id="userFormTitle">Add A New User</h1>
+                        <p id="userFormDescription">Invite a staff member to the portal.</p>
+                    </div>
+                </div>
+
+                <form id="userForm" class="user-form">
+                    <label id="copySourceField" hidden>
+                        Copy settings from
+                        <select id="copySource">
+                            <option value="">Choose a user</option>
+                        </select>
+                    </label>
+                    <label>
+                        Full name
+                        <input type="text" id="fullName" maxlength="120" autocomplete="name" required>
+                    </label>
+                    <label>
+                        Email address
+                        <input type="email" id="email" maxlength="254" autocomplete="email" required>
+                    </label>
+                    <label>
+                        Level
+                        <select id="userLevel" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </label>
+                    <label>
+                        Group
+                        <input type="text" id="groupName" maxlength="80" list="userGroups" autocomplete="organization">
+                        <datalist id="userGroups"></datalist>
+                    </label>
+                    <label class="user-active-toggle">
+                        <input type="checkbox" id="userActive" checked>
+                        Active account
+                    </label>
+                    <p id="userFormNote" class="user-form-note"></p>
+                    <div class="user-form-actions">
+                        <button type="submit" class="btn-primary" id="saveUser">Send Invitation</button>
+                        <button type="button" class="btn-secondary" data-user-cancel>Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="userDetailsPanel" class="users-panel" aria-labelledby="userDetailsTitle" hidden>
+                <div class="users-panel-heading">
+                    <div>
+                        <h1 id="userDetailsTitle">User Details</h1>
+                        <p id="userDetailsDescription"></p>
+                    </div>
+                    <button type="button" class="btn-secondary" data-user-cancel>Back to Users</button>
+                </div>
+                <div id="userDetailsContent"></div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/users.js"></script>
+</body>
+</html>

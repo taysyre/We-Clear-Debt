@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | We Clear Debt CRM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">We Clear Debt CRM</div>
+        <nav class="menu" aria-label="Portal navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="leads.html">Leads</a>
+            <a href="clients.html">Clients</a>
+            <a href="#">Calendar</a>
+            <a href="reports.html" class="active" aria-current="page">Reports</a>
+            <a href="users.html">Users</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <h2>Server Stats and Reports</h2>
+            <div id="userEmail"></div>
+        </header>
+
+        <div class="content reports-content">
+            <section class="report-intro">
+                <h1>Reports</h1>
+                <p>Live lead and client reporting from your CRM. Call-center, agent, timeclock, and server-monitoring reports require data sources that are not connected.</p>
+            </section>
+
+            <section class="report-catalog-section" aria-labelledby="reportCatalogHeading">
+                <div class="report-section-heading">
+                    <div>
+                        <h2 id="reportCatalogHeading">Report Catalog</h2>
+                        <p>Select a connected report to view live CRM data.</p>
+                    </div>
+                    <span class="report-source-badge">CRM data</span>
+                </div>
+                <div id="reportCatalog" class="report-columns" aria-live="polite"></div>
+            </section>
+
+            <section class="report-panel" aria-labelledby="reportTitle">
+                <div class="report-panel-heading">
+                    <div>
+                        <h2 id="reportTitle">Loading reports...</h2>
+                        <p id="reportDescription">Checking your portal access and loading CRM records.</p>
+                    </div>
+                    <div class="report-actions">
+                        <button type="button" class="btn-secondary" id="refreshReport" disabled>Refresh</button>
+                        <button type="button" class="btn-primary" id="exportReport" disabled>Export CSV</button>
+                        <button type="button" class="btn-secondary" id="printReport" disabled>Print</button>
+                    </div>
+                </div>
+
+                <div id="reportMessage" class="report-message" role="status" aria-live="polite"></div>
+
+                <div class="report-filters" aria-label="Report filters">
+                    <label>
+                        From
+                        <input type="date" id="dateFrom">
+                    </label>
+                    <label>
+                        To
+                        <input type="date" id="dateTo">
+                    </label>
+                    <label>
+                        Status
+                        <select id="statusFilter">
+                            <option value="">All statuses</option>
+                        </select>
+                    </label>
+                    <label class="report-search">
+                        Search
+                        <input type="search" id="reportSearch" placeholder="Name, email, or phone">
+                    </label>
+                    <button type="button" class="btn-secondary" id="clearFilters">Clear filters</button>
+                </div>
+
+                <div id="reportMetrics" class="report-metrics"></div>
+                <div id="reportWhiteboard" class="report-whiteboard"></div>
+                <div id="reportTable" class="table-card report-table-card"></div>
+            </section>
+
+            <section class="report-system-summary" aria-labelledby="systemSummaryHeading">
+                <h2 id="systemSummaryHeading">System Summary</h2>
+                <div id="systemSummary" class="report-system-grid"></div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>

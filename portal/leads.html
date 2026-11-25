@@ -34,7 +34,9 @@
 
             <a href="#">Calendar</a>
 
-            <a href="#">Reports</a>
+            <a href="reports.html">Reports</a>
+
+            <a href="users.html">Users</a>
 
             <a href="settings.html">Settings</a>
 
@@ -56,15 +58,15 @@
 
         <div class="content">
 
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;gap:20px;flex-wrap:wrap;">
+            <div class="portal-toolbar">
 
                 <input
                     type="text"
                     id="search"
                     placeholder="🔍 Search clients..."
-                    style="padding:12px 18px;width:350px;border-radius:10px;border:1px solid #ddd;">
+                    class="search-box">
 
-                <button id="exportExcel" style="padding:12px 20px;background:#286faf;color:white;border:none;border-radius:10px;cursor:pointer;">
+                <button id="exportExcel" class="btn-action">
                     Export CSV
                 </button>
 
@@ -103,6 +105,7 @@
 
 </div>
 
+<script src="js/theme.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="js/supabase.js"></script>

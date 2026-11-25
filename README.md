@@ -8,6 +8,7 @@ A modern, mobile-first website for We Clear Debt, a South African debt assistanc
 - **About Us (`/about-us/`)**: Company information and mission.
 - **Debt Review (`/debt-review/`)**: How debt review works.
 - **Common Terms (`/common-terms/`)**: Definitions of common debt review terms.
+- **Articles (`/articles/`)**: Practical guides to debt review, the process, and common questions.
 - **FAQ (`/faq/`)**: Common questions and answers.
 - **Contact (`/contact/`)**: Contact form, details, and a private service feedback form.
 - **Privacy and terms (`/privacy/`)**: Website legal policies and consent information.
@@ -44,3 +45,33 @@ A modern, mobile-first website for We Clear Debt, a South African debt assistanc
 ## Deployment
 
 Upload all files to a web server. Ensure the directory structure is maintained.
+
+## Portal user administration
+
+The portal Users page uses a protected Supabase Edge Function; the service-role/secret key stays on the server and is never placed in browser code.
+
+1. Link the Supabase CLI to the existing project and apply the database migration:
+
+   ```text
+   supabase link --project-ref ogwfsagyvcckyihcjqdb
+   supabase db push
+   ```
+
+2. Add the portal sign-in page to Supabase Auth's allowed redirect URLs:
+
+   ```text
+   https://wecleardebt.co.za/portal/login.html
+   ```
+
+   Configure Supabase Auth email delivery (SMTP) so new-user invitations can be sent.
+
+3. Configure the authorized administrator and invitation redirect, then deploy the function:
+
+   ```text
+   supabase secrets set PORTAL_ADMIN_EMAILS=wecleardebtsocials@gmail.com PORTAL_INVITE_REDIRECT_URL=https://wecleardebt.co.za/portal/login.html
+   supabase functions deploy portal-user-admin
+   ```
+
+Only the configured administrator email can list, invite, update, activate/deactivate, or manage time entries for portal users. Do not copy a Supabase service-role/secret key into the website.
+
+The configured administrator must already have a Supabase Auth account. New users receive an invitation and choose their portal password on the sign-in page. Time-sheet clock-in and clock-out actions are performed by the administrator for the selected user.
